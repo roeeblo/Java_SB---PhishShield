@@ -1,0 +1,28 @@
+# Maven
+server/target/
+*.jar
+*.war
+*.ear
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env.local
+
+# Logs
+*.log
+logs/
+
+# Docker
+docker-compose.override.yml
+
