@@ -12,9 +12,6 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  # ============================================
-  # BUILD & TEST
-  # ============================================
   build:
     name: Build & Test
     runs-on: ubuntu-latest
@@ -63,9 +60,6 @@ jobs:
           name: phishshield-jar
           path: server/target/*.jar
 
-  # ============================================
-  # SECURITY SCAN
-  # ============================================
   security:
     name: Security Scan
     runs-on: ubuntu-latest
@@ -87,9 +81,6 @@ jobs:
         run: mvn org.owasp:dependency-check-maven:check -B
         continue-on-error: true
 
-  # ============================================
-  # DOCKER BUILD & PUSH
-  # ============================================
   docker:
     name: Docker Build
     runs-on: ubuntu-latest
@@ -134,9 +125,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  # ============================================
-  # STATUS CHECK
-  # ============================================
   status:
     name: Pipeline Status
     runs-on: ubuntu-latest

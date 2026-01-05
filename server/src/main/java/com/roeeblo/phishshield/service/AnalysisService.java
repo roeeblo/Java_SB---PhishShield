@@ -17,11 +17,7 @@ public class AnalysisService {
     }
 
     public AnalyzeResponse analyze(AnalyzeRequest request) {
-        // Sanitize PII before sending to AI
         String sanitizedContent = piiSanitizer.sanitize(request.content());
-        
-        // Send to Gemini for analysis
         return geminiClient.analyzeContent(sanitizedContent, request.type());
     }
 }
-

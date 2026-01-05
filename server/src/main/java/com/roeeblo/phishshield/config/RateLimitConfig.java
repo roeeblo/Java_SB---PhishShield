@@ -13,13 +13,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class RateLimitConfig implements Filter {
 
-    // Maximum requests per IP per minute
     private static final int MAX_REQUESTS_PER_MINUTE = 10;
-    
-    // Maximum total requests per minute (global limit)
     private static final int MAX_GLOBAL_REQUESTS_PER_MINUTE = 100;
     
-    // Store request counts per IP
     private final Map<String, AtomicInteger> requestCounts = new ConcurrentHashMap<>();
     private final AtomicInteger globalRequestCount = new AtomicInteger(0);
     private volatile long lastResetTime = System.currentTimeMillis();
@@ -31,13 +27,11 @@ public class RateLimitConfig implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         
-        // Only rate limit the analyze endpoint
         if (!httpRequest.getRequestURI().equals("/api/analyze")) {
             chain.doFilter(request, response);
             return;
         }
 
-        // Reset counts every minute
         long now = System.currentTimeMillis();
         if (now - lastResetTime > 60000) {
             requestCounts.clear();
@@ -45,7 +39,6 @@ public class RateLimitConfig implements Filter {
             lastResetTime = now;
         }
 
-        // Check global limit
         if (globalRequestCount.get() >= MAX_GLOBAL_REQUESTS_PER_MINUTE) {
             httpResponse.setStatus(429);
             httpResponse.setContentType("application/json;charset=UTF-8");
@@ -55,10 +48,8 @@ public class RateLimitConfig implements Filter {
             return;
         }
 
-        // Get client IP
         String clientIp = getClientIp(httpRequest);
         
-        // Check per-IP limit
         AtomicInteger count = requestCounts.computeIfAbsent(clientIp, k -> new AtomicInteger(0));
         
         if (count.get() >= MAX_REQUESTS_PER_MINUTE) {
@@ -70,7 +61,6 @@ public class RateLimitConfig implements Filter {
             return;
         }
 
-        // Increment counters
         count.incrementAndGet();
         globalRequestCount.incrementAndGet();
         
@@ -85,4 +75,3 @@ public class RateLimitConfig implements Filter {
         return request.getRemoteAddr();
     }
 }
-

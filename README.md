@@ -4,6 +4,7 @@
 [![CodeQL](https://github.com/YOUR_USERNAME/Java_SB---PhishShield/actions/workflows/codeql.yml/badge.svg)](https://github.com/YOUR_USERNAME/Java_SB---PhishShield/actions/workflows/codeql.yml)
 [![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://openjdk.org/projects/jdk/21/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-green.svg)](https://spring.io/projects/spring-boot)
+[![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203.0-85EA2D.svg)](http://localhost:8080/swagger-ui.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 AI-powered phishing detection service using Google Gemini - designed to help elderly users identify phishing attempts in Hebrew.
@@ -17,6 +18,7 @@ AI-powered phishing detection service using Google Gemini - designed to help eld
 - Rate limiting to prevent abuse
 - Docker support for easy deployment
 - CI/CD with GitHub Actions
+- **Interactive API documentation with Swagger UI**
 
 ## Getting Started
 
@@ -81,6 +83,12 @@ Analyze content for phishing indicators.
 ### GET /api/health
 
 Health check endpoint.
+
+### API Documentation
+
+Interactive API documentation is available at:
+- **Swagger UI**: http://localhost:8080/swagger-ui.html
+- **OpenAPI JSON**: http://localhost:8080/api-docs
 
 ## Architecture
 

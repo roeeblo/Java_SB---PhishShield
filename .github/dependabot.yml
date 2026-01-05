@@ -1,6 +1,5 @@
 version: 2
 updates:
-  # Maven dependencies
   - package-ecosystem: "maven"
     directory: "/server"
     schedule:
@@ -11,7 +10,6 @@ updates:
       - "dependencies"
       - "java"
 
-  # GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -22,7 +20,6 @@ updates:
       - "dependencies"
       - "ci"
 
-  # Docker
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
@@ -31,4 +28,3 @@ updates:
     labels:
       - "dependencies"
       - "docker"
-

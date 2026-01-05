@@ -134,7 +134,6 @@ public class GeminiClient {
     private AnalyzeResponse parseResponse(String response) throws Exception {
         JsonNode root = objectMapper.readTree(response);
         
-        // Check for API errors
         if (root.has("error")) {
             String errorMsg = root.path("error").path("message").asText();
             log.error("Gemini API error: {}", errorMsg);
@@ -151,7 +150,6 @@ public class GeminiClient {
         String text = textNode.asText();
         log.debug("Gemini response text: {}", text);
         
-        // Extract JSON from response (may be wrapped in markdown)
         int jsonStart = text.indexOf("{");
         int jsonEnd = text.lastIndexOf("}") + 1;
         
@@ -182,4 +180,3 @@ public class GeminiClient {
         return List.of();
     }
 }
-

@@ -22,3 +22,10 @@ logging:
     com.roeeblo.phishshield: DEBUG
     org.springframework: WARN
 
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method
