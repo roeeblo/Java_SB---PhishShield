@@ -1,122 +1,243 @@
-# PhishShield
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&width=600&lines=🛡️+PhishShield;AI-Powered+Phishing+Detection;Protecting+Users+From+Scams;Built+with+Spring+Boot+%2B+Gemini+AI" alt="Typing SVG" />
+</p>
 
-[![CI/CD Pipeline](https://github.com/YOUR_USERNAME/Java_SB---PhishShield/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/Java_SB---PhishShield/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/YOUR_USERNAME/Java_SB---PhishShield/actions/workflows/codeql.yml/badge.svg)](https://github.com/YOUR_USERNAME/Java_SB---PhishShield/actions/workflows/codeql.yml)
-[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://openjdk.org/projects/jdk/21/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-green.svg)](https://spring.io/projects/spring-boot)
-[![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203.0-85EA2D.svg)](http://localhost:8080/swagger-ui.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Spring Boot-3.2-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-Container-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+</p>
 
-AI-powered phishing detection service using Google Gemini - designed to help elderly users identify phishing attempts in Hebrew.
+<p align="center">
+  <img src="https://img.shields.io/badge/OpenAPI-Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black"/>
+  <img src="https://img.shields.io/badge/GitHub Actions-CI/CD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CodeQL-Security-000000?style=for-the-badge&logo=github&logoColor=white"/>
+</p>
 
-## Features
+<p align="center">
+  <a href="https://github.com/roeeblo/Java_SB---PhishShield/actions/workflows/ci.yml">
+    <img src="https://github.com/roeeblo/Java_SB---PhishShield/actions/workflows/ci.yml/badge.svg" alt="CI/CD Pipeline"/>
+  </a>
+  <a href="https://github.com/roeeblo/Java_SB---PhishShield/actions/workflows/codeql.yml">
+    <img src="https://github.com/roeeblo/Java_SB---PhishShield/actions/workflows/codeql.yml/badge.svg" alt="CodeQL"/>
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"/>
+</p>
 
-- Real-time phishing detection for SMS, Email, and URLs
-- Powered by Google Gemini AI (Gemini 2.5 Flash)
-- Hebrew language support
-- PII sanitization before analysis
-- Rate limiting to prevent abuse
-- Docker support for easy deployment
-- CI/CD with GitHub Actions
-- **Interactive API documentation with Swagger UI**
+---
 
-## Getting Started
+## 📖 About
+
+**PhishShield** is an AI-powered phishing detection service designed to help users (especially elderly) identify phishing attempts in Hebrew. The service analyzes SMS messages, emails, and URLs using Google's Gemini AI to detect scams and fraud attempts.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/🎯_Target_Audience-Elderly_Users-FF6B6B?style=flat-square"/>
+  <img src="https://img.shields.io/badge/🌍_Language-Hebrew-4ECDC4?style=flat-square"/>
+  <img src="https://img.shields.io/badge/🤖_AI_Model-Gemini_2.5_Flash-9B59B6?style=flat-square"/>
+</p>
+
+---
+
+## 🚀 Tech Stack
+
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| <img src="https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> | Core Language |
+| <img src="https://img.shields.io/badge/Spring Boot-3.2-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> | Backend Framework |
+| <img src="https://img.shields.io/badge/Maven-3.9-C71A36?style=flat-square&logo=apachemaven&logoColor=white"/> | Build Tool |
+
+### AI & Analysis
+| Technology | Purpose |
+|------------|---------|
+| <img src="https://img.shields.io/badge/Google Gemini-2.5 Flash-4285F4?style=flat-square&logo=google&logoColor=white"/> | AI Analysis Engine |
+| <img src="https://img.shields.io/badge/PII Sanitizer-Custom-FF6B6B?style=flat-square"/> | Privacy Protection |
+
+### DevOps & CI/CD
+| Technology | Purpose |
+|------------|---------|
+| <img src="https://img.shields.io/badge/Docker-Container-2496ED?style=flat-square&logo=docker&logoColor=white"/> | Containerization |
+| <img src="https://img.shields.io/badge/GitHub Actions-CI/CD-2088FF?style=flat-square&logo=githubactions&logoColor=white"/> | Automation Pipeline |
+| <img src="https://img.shields.io/badge/Dependabot-Auto Updates-025E8C?style=flat-square&logo=dependabot&logoColor=white"/> | Dependency Management |
+
+### Security & Quality
+| Technology | Purpose |
+|------------|---------|
+| <img src="https://img.shields.io/badge/CodeQL-SAST-000000?style=flat-square&logo=github&logoColor=white"/> | Static Analysis |
+| <img src="https://img.shields.io/badge/OWASP-Dependency Check-000000?style=flat-square&logo=owasp&logoColor=white"/> | Vulnerability Scanning |
+| <img src="https://img.shields.io/badge/Rate Limiting-10 req/min-FF4444?style=flat-square"/> | Abuse Prevention |
+
+### Documentation
+| Technology | Purpose |
+|------------|---------|
+| <img src="https://img.shields.io/badge/OpenAPI-3.0-85EA2D?style=flat-square&logo=openapiinitiative&logoColor=black"/> | API Specification |
+| <img src="https://img.shields.io/badge/Swagger UI-Interactive Docs-85EA2D?style=flat-square&logo=swagger&logoColor=black"/> | API Documentation |
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    PhishShield Architecture                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────┐    ┌─────────────────────────────────────┐ │
+│  │   Client    │───▶│         Spring Boot API             │ │
+│  │  (Browser)  │    │                                     │ │
+│  └─────────────┘    │  ┌─────────────┐  ┌──────────────┐  │ │
+│                     │  │ Rate Limit  │  │   Swagger    │  │ │
+│                     │  │   Filter    │  │     UI       │  │ │
+│                     │  └──────┬──────┘  └──────────────┘  │ │
+│                     │         │                           │ │
+│                     │  ┌──────▼──────┐                    │ │
+│                     │  │  Controller │                    │ │
+│                     │  └──────┬──────┘                    │ │
+│                     │         │                           │ │
+│                     │  ┌──────▼──────┐                    │ │
+│                     │  │   Service   │                    │ │
+│                     │  └──────┬──────┘                    │ │
+│                     │         │                           │ │
+│                     │  ┌──────▼──────┐  ┌──────────────┐  │ │
+│                     │  │ PII Sanitize│─▶│ Gemini Client│──┼─┼──▶ Google Gemini AI
+│                     │  └─────────────┘  └──────────────┘  │ │
+│                     └─────────────────────────────────────┘ │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ⚡ Features
+
+- 🔍 **Real-time Analysis** - Instant phishing detection for SMS, Email, and URLs
+- 🤖 **AI-Powered** - Leverages Google Gemini 2.5 Flash for intelligent analysis
+- 🇮🇱 **Hebrew Support** - Native Hebrew language analysis and responses
+- 🔒 **Privacy First** - PII sanitization before AI processing
+- 🛡️ **Rate Limiting** - Protection against abuse (10 req/min per IP)
+- 📖 **API Documentation** - Interactive Swagger UI
+- 🐳 **Containerized** - Docker support for easy deployment
+- 🔄 **CI/CD Pipeline** - Automated testing, security scanning, and deployment
+- 🔐 **Security Scanning** - CodeQL and OWASP dependency checks
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Java 21+
-- Maven 3.9+
-- Docker & Docker Compose
-- Google Gemini API Key
-
-### Configuration
-
-Set your Gemini API key as an environment variable:
-
 ```bash
-# Linux/Mac
-export GEMINI_API_KEY=your-api-key-here
-
-# Windows PowerShell
-$env:GEMINI_API_KEY="your-api-key-here"
+Java 21+
+Maven 3.9+
+Docker & Docker Compose
+Google Gemini API Key
 ```
 
-### Running with Docker (Recommended)
+### Run with Docker (Recommended)
 
 ```bash
+# Set your API key
+export GEMINI_API_KEY=your-api-key-here
+
+# Start the application
 docker-compose up --build
 ```
 
-Then open http://localhost:8080
-
-### Running Locally
+### Run Locally
 
 ```bash
 cd server
+export GEMINI_API_KEY=your-api-key-here
 mvn spring-boot:run
 ```
 
-## API Endpoints
+### Access Points
 
-### POST /api/analyze
+| Endpoint | URL |
+|----------|-----|
+| 🌐 Application | http://localhost:8080 |
+| 📖 Swagger UI | http://localhost:8080/swagger-ui.html |
+| 📄 OpenAPI JSON | http://localhost:8080/api-docs |
+| ❤️ Health Check | http://localhost:8080/api/health |
 
-Analyze content for phishing indicators.
+---
 
-**Request:**
-```json
+## 📡 API Usage
+
+### Analyze Message
+
+```bash
+POST /api/analyze
+Content-Type: application/json
+
 {
-  "content": "Suspicious message content here",
+  "content": "היי אמא, זאת הבת שלך. שלחי לי את פרטי האשראי בבקשה",
   "type": "SMS"
 }
 ```
 
-**Response:**
+### Response
+
 ```json
 {
   "isPhishing": true,
   "suspicion": 0.9,
-  "reasons": ["Request for credit card details", "Impersonation of family member"],
-  "recommendation": "Do not send sensitive information via message!"
+  "reasons": ["בקשה לפרטי אשראי", "התחזות לבן משפחה"],
+  "recommendation": "אל תשלח פרטים רגישים בהודעה!"
 }
 ```
 
-### GET /api/health
+---
 
-Health check endpoint.
+## 🔐 Security Features
 
-### API Documentation
+| Feature | Description |
+|---------|-------------|
+| 🔑 **API Key Protection** | Keys stored as environment variables |
+| 📊 **CodeQL Analysis** | Automated SAST on every push |
+| 📦 **OWASP Check** | Dependency vulnerability scanning |
+| 🚦 **Rate Limiting** | 10 requests/minute per IP |
+| 🔄 **Dependabot** | Automated security updates |
+| 🧹 **PII Sanitization** | Personal data removed before AI processing |
 
-Interactive API documentation is available at:
-- **Swagger UI**: http://localhost:8080/swagger-ui.html
-- **OpenAPI JSON**: http://localhost:8080/api-docs
+---
 
-## Architecture
+## 📁 Project Structure
 
 ```
 PhishShield/
-├── .github/workflows/     # CI/CD pipelines
-│   ├── ci.yml            # Main pipeline
-│   └── codeql.yml        # Security scanning
-├── server/               # Spring Boot application
-│   ├── src/main/java/    # Java source code
-│   └── src/main/resources/
-│       └── static/       # Frontend (HTML/CSS/JS)
-├── Dockerfile            # Multi-stage Docker build
-└── docker-compose.yml    # Container orchestration
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml              # CI/CD Pipeline
+│   │   └── codeql.yml          # Security Analysis
+│   └── dependabot.yml          # Auto-updates
+├── server/
+│   └── src/main/java/
+│       └── com/roeeblo/phishshield/
+│           ├── controller/     # REST Controllers
+│           ├── service/        # Business Logic
+│           ├── dto/            # Data Transfer Objects
+│           ├── config/         # Configuration
+│           └── util/           # Utilities
+├── Dockerfile                  # Multi-stage build
+└── docker-compose.yml          # Container orchestration
 ```
 
-## Security
+---
 
-- API keys are never committed to the repository
-- CodeQL analysis runs on every push
-- OWASP dependency checks in CI
-- Rate limiting: 10 requests/minute per IP
+## 🤝 Contributing
 
-## License
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-MIT License
+---
 
-## Acknowledgments
+## 📄 License
 
-- Google Gemini AI for the analysis engine
-- Spring Boot for the backend framework
+This project is licensed under the MIT License.
+
+---
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=3000&pause=1000&color=6DB33F&center=true&vCenter=true&width=400&lines=Built+with+❤️+using+Spring+Boot;Protected+by+AI+🤖;Keeping+users+safe+🛡️" alt="Footer" />
+</p>
