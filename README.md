@@ -65,57 +65,6 @@ PhishShield is a phishing detection service that helps users identify scam attem
 | OpenAPI 3.0 | API Specification |
 | Swagger UI | Interactive Documentation |
 
----
-
-## Architecture
-
-```
-Client Request
-      │
-      ▼
-┌─────────────────────────────────┐
-│         Rate Limiter            │  (10 req/min per IP)
-└──────────────┬──────────────────┘
-               │
-               ▼
-┌─────────────────────────────────┐
-│       Analyze Controller        │
-└──────────────┬──────────────────┘
-               │
-               ▼
-┌─────────────────────────────────┐
-│       Analysis Service          │
-└──────────────┬──────────────────┘
-               │
-               ▼
-┌─────────────────────────────────┐
-│        PII Sanitizer            │  (removes personal data)
-└──────────────┬──────────────────┘
-               │
-               ▼
-┌─────────────────────────────────┐
-│        Gemini Client            │ ──────▶ Google Gemini API
-└─────────────────────────────────┘
-```
-
----
-
-## Running with Docker
-
-```bash
-export GEMINI_API_KEY=your-api-key
-docker-compose up --build
-```
-
-### Endpoints
-
-| Endpoint | Description |
-|----------|-------------|
-| http://localhost:8080 | Web Interface |
-| http://localhost:8080/swagger-ui.html | API Documentation |
-| http://localhost:8080/api/health | Health Check |
-
----
 
 ## API Usage
 
