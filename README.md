@@ -128,6 +128,3 @@ PhishShield/
 
 ---
 
-## License
-
-MIT License
