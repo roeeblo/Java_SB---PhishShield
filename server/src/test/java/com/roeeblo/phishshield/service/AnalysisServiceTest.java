@@ -34,7 +34,6 @@ class AnalysisServiceTest {
 
     @Test
     void analyze_shouldReturnPhishingResponse_whenContentIsPhishing() {
-        // Given
         AnalyzeRequest request = new AnalyzeRequest(
             "Click here to verify your account: http://suspicious-link.com",
             ContentType.EMAIL
@@ -49,11 +48,8 @@ class AnalysisServiceTest {
         
         when(geminiClient.analyzeContent(any(), eq(ContentType.EMAIL)))
             .thenReturn(expectedResponse);
-
-        // When
         AnalyzeResponse response = analysisService.analyze(request);
 
-        // Then
         assertTrue(response.isPhishing());
         assertEquals(0.95, response.suspicion());
         assertFalse(response.reasons().isEmpty());
@@ -61,7 +57,6 @@ class AnalysisServiceTest {
 
     @Test
     void analyze_shouldReturnSafeResponse_whenContentIsSafe() {
-        // Given
         AnalyzeRequest request = new AnalyzeRequest(
             "Hello, this is a regular message.",
             ContentType.EMAIL
@@ -69,18 +64,14 @@ class AnalysisServiceTest {
         
         when(geminiClient.analyzeContent(any(), eq(ContentType.EMAIL)))
             .thenReturn(AnalyzeResponse.safe());
-
-        // When
         AnalyzeResponse response = analysisService.analyze(request);
 
-        // Then
         assertFalse(response.isPhishing());
         assertEquals(0.0, response.suspicion());
     }
 
     @Test
     void analyze_shouldSanitizePii_beforeAnalysis() {
-        // Given
         AnalyzeRequest request = new AnalyzeRequest(
             "Contact me at john@example.com or 123-456-7890",
             ContentType.EMAIL
@@ -89,11 +80,8 @@ class AnalysisServiceTest {
         when(geminiClient.analyzeContent(any(), any()))
             .thenReturn(AnalyzeResponse.safe());
 
-        // When
         analysisService.analyze(request);
 
-        // Then - PII should be sanitized (verified by the mock interaction)
-        // The sanitizer replaces email and phone with placeholders
     }
 }
 
