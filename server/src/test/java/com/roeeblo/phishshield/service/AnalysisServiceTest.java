@@ -7,6 +7,10 @@ import com.roeeblo.phishshield.util.PiiSanitizer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -30,6 +34,18 @@ class AnalysisServiceTest {
     void setUp() {
         piiSanitizer = new PiiSanitizer();
         analysisService = new AnalysisService(geminiClient, piiSanitizer);
+    }
+
+    @Test
+    void analyze_shouldHandleEmptyContent() {
+    AnalyzeRequest request = new AnalyzeRequest("", ContentType.EMAIL);
+
+    when(geminiClient.analyzeContent(any(), any()))
+        .thenReturn(AnalyzeResponse.safe());
+
+    AnalyzeResponse response = analysisService.analyze(request);
+
+    assertNotNull(response);
     }
 
     @Test
@@ -81,6 +97,38 @@ class AnalysisServiceTest {
             .thenReturn(AnalyzeResponse.safe());
 
         analysisService.analyze(request);
+        verify(geminiClient).analyzeContent(
+        argThat(content -> !content.contains("john@example.com")),
+        any()
+    );
+    class PhishShieldUITest {
+
+    private WebDriver driver;
+
+    @BeforeEach
+    void setUp() {
+        driver = new ChromeDriver();
+        driver.get("http://localhost:5173");
+    }
+
+    @Test
+    void analyzeFlow_shouldShowResult() {
+        driver.findElement(By.id("message"))
+              .sendKeys("Click here to verify account");
+
+        driver.findElement(By.id("analyzeBtn")).click();
+
+        WebElement result = driver.findElement(By.id("result"));
+
+        assertTrue(result.getText().contains("Phishing"));
+    }
+
+    @AfterEach
+    void tearDown() {
+        driver.quit();
+    }
+}
+
 
     }
 }
